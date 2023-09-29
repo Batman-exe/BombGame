@@ -9,10 +9,13 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] private float moveSpeed = 250.0f;
     private Vector2 moveInput;
     private Rigidbody2D rb;
+    private Animator characterAnimator;
+
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        characterAnimator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -21,6 +24,10 @@ public class CharacterMovement : MonoBehaviour
         float horizontalInput = Input.GetAxisRaw("Horizontal");
         float verticalInput = Input.GetAxisRaw("Vertical");
         moveInput = new Vector2(horizontalInput, verticalInput).normalized;
+
+        characterAnimator.SetFloat("Horizontal", horizontalInput);
+        characterAnimator.SetFloat("Vertical", verticalInput);
+        characterAnimator.SetFloat("Speed", moveInput.sqrMagnitude);
 
     }
 
