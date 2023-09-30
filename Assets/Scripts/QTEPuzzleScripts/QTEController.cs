@@ -24,14 +24,55 @@ public class QTEController : MonoBehaviour
 
     private bool sliderShouldMove = true;
 
+    private bool gameStartCounter = true;
+    private bool gameStartCounterInProgress = false;
+
     private void Awake()
     {
         countDownSlider.value = countDownSlider.maxValue;
         sliderShouldMove = false;
+        gameStartCounter = true;
         howManyQTEs = 1;
     }
 
     private void Update()
+    {
+        //Funcion para ejecutar el juego principal
+        if (!gameStartCounter)
+        {
+            QTEexecute();
+        } else if (!gameStartCounterInProgress)
+        {
+            gameStartCounterInProgress = true;
+            StartCoroutine(WaitBeforeStart());
+        }
+
+        //Actualiza el valor del slider en pantalla
+        if (sliderShouldMove)
+        {
+            sliderValue();
+        }
+
+    }
+
+
+    IEnumerator WaitBeforeStart()
+    {
+        yield return new WaitForSeconds(0.5f);
+        displayKey.text = "2";
+        displayKey.GetComponent<Animation>().Play();
+
+        yield return new WaitForSeconds(1f);
+        displayKey.text = "1";
+        displayKey.GetComponent<Animation>().Play();
+
+        yield return new WaitForSeconds(1.5f);
+        gameStartCounter = false;
+
+    }
+
+
+    private void QTEexecute()
     {
         //Revisa si ya hay un QTE activo y si ya se alcanzo el maximo de QTEs
         if (!QTEInProgress && howManyQTEs <= 4)
@@ -87,7 +128,8 @@ public class QTEController : MonoBehaviour
                     correctKey = true;
 
                     StartCoroutine(KeyPressed());
-                } else
+                }
+                else
                 {
                     correctKey = false;
 
@@ -102,7 +144,7 @@ public class QTEController : MonoBehaviour
 
         if (randomQTENumber == 1)
         {
-            if(Input.anyKeyDown)
+            if (Input.anyKeyDown)
             {
                 if (Input.GetKeyDown(KeyCode.A))
                 {
@@ -153,13 +195,8 @@ public class QTEController : MonoBehaviour
             }
 
         }
-        //Actualiza el valor del slider en pantalla
-        if (sliderShouldMove)
-        {
-            sliderValue();
-        }
-
     }
+
 
 
     //Prende la luz buena o mala dependiendo de si coinciden las teclas
