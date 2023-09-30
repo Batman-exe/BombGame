@@ -12,8 +12,13 @@ public class ColorSequence : MonoBehaviour
     [SerializeField] private float pickDelay = 0.4f;
     private int pickNumber = 0;
 
+    private AudioSource audioSound;
+    [SerializeField]private AudioClip good;
+    [SerializeField]private AudioClip bad;
+
     private void Start()
     {
+        audioSound = GetComponent<AudioSource>();
         ResetGame();
         SetButtonIndex();
         StartCoroutine(PlayGame());
@@ -53,10 +58,9 @@ public class ColorSequence : MonoBehaviour
         colorOrder.Add(randomNum);
     }
 
-    //Funcion para verificar que boton eligio el jugador
+    //Funcion para verificar que boton eligío el jugador
     public void PlayersPick(int pick)
     {
-        Debug.Log(pick);
 
         if (pick == colorOrder[pickNumber])
         {
@@ -64,12 +68,12 @@ public class ColorSequence : MonoBehaviour
             pickNumber++;
             if(pickNumber == colorOrder.Count)
             {
+                audioSound.PlayOneShot(good);
                 StartCoroutine(PlayGame());
             }
         } else
         {
-            Debug.Log("lose");
-
+            audioSound.PlayOneShot(bad);
             ResetGame();
         }
 

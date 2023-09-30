@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 173883607559756833, guid: 9639ff2f94dc9d046bf3406565e61dfe, type: 3}
       propertyPath: m_Name
-      value: WireRed Variant
+      value: WireRecieverVariant
       objectReference: {fileID: 0}
     - target: {fileID: 173883607559756833, guid: 9639ff2f94dc9d046bf3406565e61dfe, type: 3}
       propertyPath: m_TagString
@@ -139,6 +139,8 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 1035066588039614801, guid: 9639ff2f94dc9d046bf3406565e61dfe, type: 3}
     - {fileID: 1889650444024107353, guid: 9639ff2f94dc9d046bf3406565e61dfe, type: 3}
+    - {fileID: 6681814533925970457, guid: 9639ff2f94dc9d046bf3406565e61dfe, type: 3}
+    - {fileID: 4906779081827550176, guid: 9639ff2f94dc9d046bf3406565e61dfe, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 173883607559756833, guid: 9639ff2f94dc9d046bf3406565e61dfe, type: 3}

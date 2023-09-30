@@ -22,7 +22,14 @@ public class QTEController : MonoBehaviour
 
     public int howManyRigth;
 
+    private bool sliderShouldMove = true;
 
+    private void Awake()
+    {
+        countDownSlider.value = countDownSlider.maxValue;
+        sliderShouldMove = false;
+        howManyQTEs = 1;
+    }
 
     private void Update()
     {
@@ -31,6 +38,7 @@ public class QTEController : MonoBehaviour
         {
             howManyQTEs++;
             countDownSlider.value = countDownSlider.maxValue;
+            sliderShouldMove = true;
 
             //Elegir un index para saber que letra presionar de manera random
             randomQTENumber = UnityEngine.Random.Range(0, 4);
@@ -146,7 +154,10 @@ public class QTEController : MonoBehaviour
 
         }
         //Actualiza el valor del slider en pantalla
-        sliderValue();
+        if (sliderShouldMove)
+        {
+            sliderValue();
+        }
 
     }
 
@@ -157,7 +168,7 @@ public class QTEController : MonoBehaviour
     {
         randomQTENumber = 5;
         Debug.Log(correctKey);
-        countDownSlider.value = countDownSlider.maxValue;
+        sliderShouldMove = false;
 
         if (correctKey)
         {
@@ -170,6 +181,7 @@ public class QTEController : MonoBehaviour
             correctKey = false;
             yield return new WaitForSeconds(0.5f);
             QTEInProgress = false;
+
 
 
         } else
