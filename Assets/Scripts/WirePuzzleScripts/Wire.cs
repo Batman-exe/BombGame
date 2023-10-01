@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -7,26 +8,22 @@ public class Wire : MonoBehaviour
 {
     private LineRenderer line;
     private AudioSource sparkSound;
-    private Vector3 initialPosition;
     [SerializeField] private string destinationTag;
     [SerializeField] private GameObject lightOn;
     [SerializeField] private GameObject particlesSpark;
+
+    [SerializeField] private GameObject parent;
 
     Vector3 offset;
 
     private void Start()
     {
-        initialPosition = transform.position;
         line = GetComponent<LineRenderer>();
         sparkSound = GetComponent<AudioSource>();
     }
 
-    private void Awake()
-    {
-        //line.positionCount = 2;
 
-        //line.SetPosition(0, initialPosition);
-    }
+
 
 
     private void OnMouseDown()
@@ -52,17 +49,22 @@ public class Wire : MonoBehaviour
 
         if (Physics2D.Raycast(rayOrigin, rayDir))
         {
+            Debug.Log(hitInfo.transform.tag);
             //Compara el tag del cable inicial con el que hace contacto
             //Si es igual enciende la luz y desactiva el collider para que no pueda activarse de nuevo
             //Si no es igual se regresa a su posicion inicial
             if (hitInfo.transform.tag == destinationTag)
             {
+
                 line.SetPosition(0, hitInfo.transform.position);
                 lightOn.SetActive(true);
                 sparkSound.Play();
                 particlesSpark.GetComponent<ParticleSystem>().Play();
                 transform.gameObject.GetComponent<Collider2D>().enabled = false;
-            } else
+                parent.GetComponent<WireWinLose>().wiresConected += 1;
+
+            }
+            else
             {
                 line.SetPosition(0, transform.position);
             }

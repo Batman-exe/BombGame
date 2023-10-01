@@ -20,13 +20,23 @@ public class QTEController : MonoBehaviour
     //Cuantas rondas de QTE van a suceder
     private int howManyQTEs = 1;
     //Para verificar si gana o pierde
-    public int howManyRigth;
+    private int howManyRigth = 1;
 
     private bool sliderShouldMove = true;
 
     //Para el counter al principio
     private bool gameStartCounter = true;
     private bool gameStartCounterInProgress = false;
+
+
+    private BombSpawner bombSpawner;
+    [SerializeField] private GameObject timer;
+
+    private void Start()
+    {
+        bombSpawner = FindObjectOfType<BombSpawner>();
+
+    }
 
     private void Awake()
     {
@@ -38,6 +48,12 @@ public class QTEController : MonoBehaviour
 
     private void Update()
     {
+        if(timer.GetComponent<Timer>().timeIsUp == true)
+        {
+            Debug.Log("boom");
+            Destroy(gameObject, 2f);
+        }
+
         //Funcion para ejecutar el juego principal
         if (!gameStartCounter)
         {
@@ -53,6 +69,7 @@ public class QTEController : MonoBehaviour
         {
             sliderValue();
         }
+
 
     }
 
@@ -78,6 +95,17 @@ public class QTEController : MonoBehaviour
         //Revisa si ya hay un QTE activo y si ya se alcanzo el maximo de QTEs
         if (!QTEInProgress && howManyQTEs <= 4)
         {
+            if (howManyQTEs == 4 && howManyRigth >= 3)
+            {
+                bombSpawner.GetComponent<BombSpawner>().DeactivateBomb();
+                Destroy(gameObject, 1f);
+            } else if (howManyQTEs == 4 && howManyRigth <3)
+            {
+                Debug.Log("boom");
+                Destroy(gameObject, 2f);
+
+            }
+
             howManyQTEs++;
             countDownSlider.value = countDownSlider.maxValue;
             sliderShouldMove = true;

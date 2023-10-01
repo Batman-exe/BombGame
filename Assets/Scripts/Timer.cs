@@ -10,6 +10,8 @@ public class Timer : MonoBehaviour
     private bool timeIsRunning = true;
     [SerializeField]private TextMeshPro timeText;
 
+    public bool timeIsUp = false;
+
 
     private void Awake()
     {
@@ -28,6 +30,7 @@ public class Timer : MonoBehaviour
                 Debug.Log(Mathf.FloorToInt(timeRemaining));
             } else if (Mathf.FloorToInt(timeRemaining) == 1)
             {
+                timeIsUp = true;
                 Debug.Log("lose");
             }
         }
