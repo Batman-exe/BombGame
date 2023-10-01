@@ -870,6 +870,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5993872796843781169, guid: 76d3b0b0f6a02074c8b23624d94f2de0, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
     - target: {fileID: 9198670507523907348, guid: 76d3b0b0f6a02074c8b23624d94f2de0, type: 3}
       propertyPath: m_Name
       value: BombWire
@@ -939,6 +943,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7433734828507132945, guid: 1bb9c8e9817b7be4d90659cd63d28f3d, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -959,6 +967,10 @@ PrefabInstance:
     - target: {fileID: 737263313845374893, guid: 7e5744b6e51a16045bd77fbba8b5867f, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3059289948200900535, guid: 7e5744b6e51a16045bd77fbba8b5867f, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 64
       objectReference: {fileID: 0}
     - target: {fileID: 8432638334775908526, guid: 7e5744b6e51a16045bd77fbba8b5867f, type: 3}
       propertyPath: m_LocalPosition.x

@@ -16,7 +16,15 @@ public class WireWinLose : MonoBehaviour
         bombSpawner = FindObjectOfType<BombSpawner>();
         gameOver = GameObject.Find("GameOverCanvas");
 
+    }
 
+    private void Awake()
+    {
+        GameObject[] bomb = GameObject.FindGameObjectsWithTag("Bomb");
+        foreach(GameObject booom in bomb)
+        {
+            booom.GetComponent<CircleCollider2D>().enabled = false;
+        }
     }
 
 
@@ -25,6 +33,11 @@ public class WireWinLose : MonoBehaviour
         if (wiresConected == 4)
         {
             bombSpawner.GetComponent<BombSpawner>().DeactivateBomb();
+            GameObject[] bomb = GameObject.FindGameObjectsWithTag("Bomb");
+            foreach (GameObject booom in bomb)
+            {
+                booom.GetComponent<CircleCollider2D>().enabled = true;
+            }
             Destroy(parent, 0.5f);
         } else if ( timer.GetComponent<Timer>().timeIsUp == true )
         {

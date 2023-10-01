@@ -37,7 +37,7 @@ public class ColorSequence : MonoBehaviour
     {
         if (timer.GetComponent<Timer>().timeIsUp == true)
         {
-            gameOver.transform.GetChild(0).gameObject.SetActive(true);
+            gameOver.transform.GetChild(0).gameObject.SetActive(true); 
             Destroy(gameObject, 0.5f);
         }
     }
