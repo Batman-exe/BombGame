@@ -8,6 +8,7 @@ public class SettingMenu : MonoBehaviour
 {
     [SerializeField]public Slider slider;
     [SerializeField]public AudioMixer audioMixer;
+    [SerializeField] private AudioClip audioClip;
     [SerializeField] private float volume = -30f;
 
 
@@ -32,9 +33,14 @@ public class SettingMenu : MonoBehaviour
 
     public void SetVolume (float volume)
     {
-        audioMixer.SetFloat("volume", volume);
+        audioMixer.SetFloat("VolumeSFX", volume);
     }
 
+
+    private void OnMouseExit()
+    {
+        gameObject.GetComponent<AudioSource>().PlayOneShot(audioClip);
+    }
 
 
 }

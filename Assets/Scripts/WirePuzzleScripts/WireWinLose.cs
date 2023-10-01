@@ -8,11 +8,14 @@ public class WireWinLose : MonoBehaviour
     [SerializeField] private GameObject parent;
     private BombSpawner bombSpawner;
     [SerializeField] private GameObject timer;
+    [SerializeField] private GameObject gameOver;
 
 
     private void Start()
     {
         bombSpawner = FindObjectOfType<BombSpawner>();
+        gameOver = GameObject.Find("GameOverCanvas");
+
 
     }
 
@@ -26,7 +29,7 @@ public class WireWinLose : MonoBehaviour
         } else if ( timer.GetComponent<Timer>().timeIsUp == true )
         {
             Destroy(parent, 0.5f);
-            Debug.Log("boom");
+            gameOver.transform.GetChild(0).gameObject.SetActive(true);
         }
     }
 
