@@ -1,18 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Wire : MonoBehaviour
 {
-    public LineRenderer line;
+    private LineRenderer line;
+    private AudioSource sparkSound;
+    private Vector3 initialPosition;
     [SerializeField] private string destinationTag;
     [SerializeField] private GameObject lightOn;
+    [SerializeField] private GameObject particlesSpark;
 
     Vector3 offset;
 
     private void Start()
     {
+        initialPosition = transform.position;
         line = GetComponent<LineRenderer>();
+        sparkSound = GetComponent<AudioSource>();
+    }
+
+    private void Awake()
+    {
+        //line.positionCount = 2;
+
+        //line.SetPosition(0, initialPosition);
     }
 
 
@@ -46,6 +59,8 @@ public class Wire : MonoBehaviour
             {
                 line.SetPosition(0, hitInfo.transform.position);
                 lightOn.SetActive(true);
+                sparkSound.Play();
+                particlesSpark.GetComponent<ParticleSystem>().Play();
                 transform.gameObject.GetComponent<Collider2D>().enabled = false;
             } else
             {
