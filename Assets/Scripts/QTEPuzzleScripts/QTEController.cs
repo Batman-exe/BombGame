@@ -17,13 +17,14 @@ public class QTEController : MonoBehaviour
     private int randomQTENumber;
     private bool correctKey;
     private bool countingDown;
-
+    //Cuantas rondas de QTE van a suceder
     private int howManyQTEs = 1;
-
+    //Para verificar si gana o pierde
     public int howManyRigth;
 
     private bool sliderShouldMove = true;
 
+    //Para el counter al principio
     private bool gameStartCounter = true;
     private bool gameStartCounterInProgress = false;
 
@@ -126,7 +127,6 @@ public class QTEController : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.W))
                 {
                     correctKey = true;
-
                     StartCoroutine(KeyPressed());
                 }
                 else
@@ -136,8 +136,6 @@ public class QTEController : MonoBehaviour
 
                     StartCoroutine(KeyPressed());
                 }
-
-
             }
 
         }
@@ -204,7 +202,6 @@ public class QTEController : MonoBehaviour
     IEnumerator KeyPressed()
     {
         randomQTENumber = 5;
-        Debug.Log(correctKey);
         sliderShouldMove = false;
 
         if (correctKey)
@@ -214,12 +211,9 @@ public class QTEController : MonoBehaviour
             howManyRigth++;
 
             yield return new WaitForSeconds(0.5f);
-
             correctKey = false;
             yield return new WaitForSeconds(0.5f);
             QTEInProgress = false;
-
-
 
         } else
         {
@@ -227,7 +221,6 @@ public class QTEController : MonoBehaviour
             ligthtsOnOrOff(false);
 
             yield return new WaitForSeconds(0.5f);
-
             correctKey = false;
             yield return new WaitForSeconds(0.5f);
             QTEInProgress = false;
@@ -257,11 +250,6 @@ public class QTEController : MonoBehaviour
 
     }
 
-    //Actualiza el slider
-    private void sliderValue()
-    {
-        countDownSlider.value -= Time.deltaTime * 1;
-    }
 
     //Busca el GameObject luz y dependiendo de si se quiere la buena o mala se prende la correspondiente
     private void ligthtsOnOrOff(bool answer)
@@ -276,12 +264,14 @@ public class QTEController : MonoBehaviour
             lights[lightsIndex].transform.GetChild(1).gameObject.SetActive(false);
             lights[lightsIndex].transform.GetChild(2).gameObject.SetActive(true);
         }
-        Debug.Log(lightsIndex.ToString());
-
         //Para no referenciar la misma luz se aumenta el index
         lightsIndex += 1;
     }
 
-
+    //Actualiza el slider
+    private void sliderValue()
+    {
+        countDownSlider.value -= Time.deltaTime * 1;
+    }
 
 }
