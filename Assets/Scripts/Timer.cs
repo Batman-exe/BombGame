@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Unity.VisualScripting;
 
 public class Timer : MonoBehaviour
 {
@@ -9,9 +10,14 @@ public class Timer : MonoBehaviour
     [SerializeField]private float timeRemaining = 300;
     private bool timeIsRunning = true;
     [SerializeField]private TextMeshPro timeText;
+    public GameObject gameOver;
 
     public bool timeIsUp = false;
 
+    private void Start()
+    {
+        gameOver = GameObject.Find("GameOverCanvas");
+    }
 
     private void Awake()
     {
@@ -27,11 +33,11 @@ public class Timer : MonoBehaviour
             {
                 timeRemaining -= Time.deltaTime;
                 DisplayTime(timeRemaining);
-                Debug.Log(Mathf.FloorToInt(timeRemaining));
             } else if (Mathf.FloorToInt(timeRemaining) == 1)
             {
                 timeIsUp = true;
-                Debug.Log("lose");
+                gameOver.transform.GetChild(0).gameObject.SetActive(true);
+
             }
         }
     }

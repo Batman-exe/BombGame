@@ -20,11 +20,14 @@ public class ColorSequence : MonoBehaviour
     private BombSpawner bombSpawner;
 
     [SerializeField] private GameObject timer;
+    [SerializeField] private GameObject gameOver;
 
 
     private void Start()
     {
         bombSpawner = FindObjectOfType<BombSpawner>();
+        gameOver = GameObject.Find("GameOverCanvas");
+
         audioSound = GetComponent<AudioSource>();
         ResetGame();
         SetButtonIndex();
@@ -34,7 +37,7 @@ public class ColorSequence : MonoBehaviour
     {
         if (timer.GetComponent<Timer>().timeIsUp == true)
         {
-            Debug.Log("boom");
+            gameOver.transform.GetChild(0).gameObject.SetActive(true); 
             Destroy(gameObject, 0.5f);
         }
     }
@@ -58,8 +61,9 @@ public class ColorSequence : MonoBehaviour
         }
         else if (mistakes > 1 || timer.GetComponent<Timer>().timeIsUp == true)
         {
-            Debug.Log("boom");
             Destroy(gameObject, 0.5f);
+            gameOver.transform.GetChild(0).gameObject.SetActive(true);
+
         }
         pickNumber = 0;
         yield return new WaitForSeconds(pickDelay);
