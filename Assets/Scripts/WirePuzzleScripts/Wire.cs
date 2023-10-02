@@ -23,10 +23,6 @@ public class Wire : MonoBehaviour
         
     }
 
-
-
-
-
     private void OnMouseDown()
     {
         offset = transform.position - MouseWorldPosition();

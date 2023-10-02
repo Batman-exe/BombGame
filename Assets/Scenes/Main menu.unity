@@ -498,7 +498,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 475, y: -27.789757}
+  m_AnchoredPosition: {x: -77, y: -27.789757}
   m_SizeDelta: {x: 726.397, y: 49.112}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &595720029
@@ -584,7 +584,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 2.5211487, w: 0}
+  m_margin: {x: 0, y: 0, z: 500.06885, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1069,6 +1069,10 @@ PrefabInstance:
     - target: {fileID: 2531353040144976738, guid: a27aa7191fbe4f740abe0e67e5595d6d, type: 3}
       propertyPath: m_fontSize
       value: 44.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2531353040144976738, guid: a27aa7191fbe4f740abe0e67e5595d6d, type: 3}
+      propertyPath: m_margin.x
+      value: 626.955
       objectReference: {fileID: 0}
     - target: {fileID: 2531353040144976738, guid: a27aa7191fbe4f740abe0e67e5595d6d, type: 3}
       propertyPath: m_fontAsset
@@ -1844,7 +1848,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7366957551063712882, guid: a27aa7191fbe4f740abe0e67e5595d6d, type: 3}
       propertyPath: m_text
-      value: "Luis David Valencia G\xF3mez"
+      value: Luisdo
       objectReference: {fileID: 0}
     - target: {fileID: 7366957551063712882, guid: a27aa7191fbe4f740abe0e67e5595d6d, type: 3}
       propertyPath: m_fontSize
@@ -1928,7 +1932,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7797950666344420750, guid: a27aa7191fbe4f740abe0e67e5595d6d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -480.11072
+      value: -265.2
       objectReference: {fileID: 0}
     - target: {fileID: 7797950666344420750, guid: a27aa7191fbe4f740abe0e67e5595d6d, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1944,7 +1948,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7831562487013425313, guid: a27aa7191fbe4f740abe0e67e5595d6d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -480.11072
+      value: -577
       objectReference: {fileID: 0}
     - target: {fileID: 7831562487013425313, guid: a27aa7191fbe4f740abe0e67e5595d6d, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1952,7 +1956,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7839717683426499870, guid: a27aa7191fbe4f740abe0e67e5595d6d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7871403139928985722, guid: a27aa7191fbe4f740abe0e67e5595d6d, type: 3}
       propertyPath: m_fontSize
@@ -2316,7 +2320,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 465, y: 208}
+  m_AnchoredPosition: {x: 368.1107, y: 208}
   m_SizeDelta: {x: 726.397, y: 45.37}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &613295952
@@ -2339,7 +2343,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Player Design and Programming
+  m_text: Environment design and programming
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2461,7 +2465,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 465, y: 273}
+  m_AnchoredPosition: {x: 368.1107, y: 273}
   m_SizeDelta: {x: 726.397, y: 45.37}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &702814046
@@ -2484,7 +2488,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Enviroment Design and programming
+  m_text: Character design and programming
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2679,7 +2683,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -480.11072, y: 280}
+  m_AnchoredPosition: {x: -577, y: 280}
   m_SizeDelta: {x: 726.397, y: 45.37}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &768564579
@@ -2702,7 +2706,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Isaac Barake
+  m_text: Batman-exe
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3054,7 +3058,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 465, y: 142}
+  m_AnchoredPosition: {x: 368.1107, y: 142}
   m_SizeDelta: {x: 726.397, y: 45.37}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1180844483
@@ -3077,7 +3081,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Puzzle Disign and Programming
+  m_text: Puzzle design and programming
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3743,7 +3747,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -480.11072, y: 212}
+  m_AnchoredPosition: {x: -577, y: 212}
   m_SizeDelta: {x: 726.397, y: 45.37}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2046257113
@@ -3766,7 +3770,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Santiago Tangarife Rinc\xF3n"
+  m_text: Barakles
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

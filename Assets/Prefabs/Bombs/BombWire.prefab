@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5061261760340255765}
   - component: {fileID: 7115600616332343795}
   - component: {fileID: 5993872796843781169}
-  - component: {fileID: 6622783424304297280}
+  - component: {fileID: 5243768454506898467}
   m_Layer: 0
   m_Name: BombWire
   m_TagString: Bomb
@@ -121,7 +121,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 5.5
---- !u!114 &6622783424304297280
+--- !u!114 &5243768454506898467
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -130,7 +130,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 9198670507523907348}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c48e34ca28187d4bab05f6aa6d2b6b4, type: 3}
+  m_Script: {fileID: 11500000, guid: c46d5db6b9194a046b5977ca7db3776f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   id: Wire

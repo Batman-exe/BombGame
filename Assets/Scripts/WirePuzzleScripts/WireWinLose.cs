@@ -6,16 +6,14 @@ public class WireWinLose : MonoBehaviour
 {
     public int wiresConected;
     [SerializeField] private GameObject parent;
-    private BombSpawner bombSpawner;
     [SerializeField] private GameObject timer;
     [SerializeField] private GameObject gameOver;
-
+    private BombWire bombWire;
 
     private void Start()
     {
-        bombSpawner = FindObjectOfType<BombSpawner>();
         gameOver = GameObject.Find("GameOverCanvas");
-
+        FindObjectOfType<CharacterMovement>().ableToMove = false;
     }
 
     private void Awake()
@@ -32,7 +30,8 @@ public class WireWinLose : MonoBehaviour
     {
         if (wiresConected == 4)
         {
-            bombSpawner.GetComponent<BombSpawner>().DeactivateBomb();
+            bombWire.Defuse();
+            FindObjectOfType<CharacterMovement>().ableToMove = true;
             GameObject[] bomb = GameObject.FindGameObjectsWithTag("Bomb");
             foreach (GameObject booom in bomb)
             {
@@ -46,6 +45,9 @@ public class WireWinLose : MonoBehaviour
         }
     }
 
-
+    public void SetBomb(BombWire wireBomb)
+    {
+        bombWire = wireBomb;
+    }
 
 }

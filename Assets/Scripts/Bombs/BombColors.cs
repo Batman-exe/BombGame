@@ -2,16 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BombWire : Bomb
+public class BombColors : Bomb
 {
     protected override void EnablePuzzle()
     {
         if (puzzlePrefab != null && playerInTrigger)
         {
-            Vector3 position = new Vector3(0, 0, 0);
+            Vector3 position = new Vector3(227.33f, 143.07f, 0);
             GameObject puzzleInstance = Instantiate(puzzlePrefab, position, Quaternion.identity);
-            puzzleInstance.GetComponent<WireWinLose>().SetBomb(this);
-
+            puzzleInstance.GetComponent<ColorSequence>().SetBomb(this);
             playerInTrigger = false;
         }
     }

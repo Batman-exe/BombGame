@@ -29,15 +29,15 @@ public class QTEController : MonoBehaviour
     private bool gameStartCounterInProgress = false;
 
 
-    private BombSpawner bombSpawner;
+    private BombQTE bomb;
+
     [SerializeField] private GameObject timer;
     [SerializeField] private GameObject gameOver;
 
     private void Start()
     {
         gameOver = GameObject.Find("GameOverCanvas");
-        bombSpawner = FindObjectOfType<BombSpawner>();
-
+        FindObjectOfType<CharacterMovement>().ableToMove = false;
     }
 
     private void Awake()
@@ -101,7 +101,8 @@ public class QTEController : MonoBehaviour
         {
             if (howManyQTEs == 4 && howManyRigth >= 3)
             {
-                bombSpawner.GetComponent<BombSpawner>().DeactivateBomb();
+                bomb.Defuse();
+                FindObjectOfType<CharacterMovement>().ableToMove = true;
                 Destroy(gameObject, 1f);
             } else if (howManyQTEs == 4 && howManyRigth <3)
             {
@@ -307,4 +308,8 @@ public class QTEController : MonoBehaviour
         countDownSlider.value -= Time.deltaTime * 1;
     }
 
+    public void SetBomb(BombQTE bombQTE)
+    {
+        bomb = bombQTE;
+    }
 }

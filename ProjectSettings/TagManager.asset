@@ -12,6 +12,9 @@ TagManager:
   - Behind
   - GameOver
   - wireback
+  - ColorsPuzzle
+  - WirePuzzle
+  - QTEPuzzle
   layers:
   - Default
   - TransparentFX

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1476723702596766105}
   m_Layer: 0
   m_Name: ColorSequence
-  m_TagString: Untagged
+  m_TagString: ColorsPuzzle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -193,7 +193,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -218.48, y: -143.05}
+  m_AnchoredPosition: {x: -218.69, y: -146.76}
   m_SizeDelta: {x: 7.2325, y: 1.3183}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &328314108723611354
@@ -342,7 +342,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdc5938ebc23ebd4e854566669448258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeRemaining: 5
+  timeRemaining: 25
   timeText: {fileID: 4623647432382290215}
   gameOver: {fileID: 0}
   timeIsUp: 0

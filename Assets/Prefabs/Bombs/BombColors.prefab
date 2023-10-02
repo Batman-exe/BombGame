@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7246335417968552606}
   - component: {fileID: 1492905603207605480}
   - component: {fileID: 7433734828507132945}
-  - component: {fileID: 8461569237958323274}
+  - component: {fileID: 7391966757854707110}
   m_Layer: 0
   m_Name: BombColors
   m_TagString: Bomb
@@ -121,7 +121,7 @@ CircleCollider2D:
   m_Offset: {x: 0.048489783, y: 0.115261875}
   serializedVersion: 2
   m_Radius: 5.5
---- !u!114 &8461569237958323274
+--- !u!114 &7391966757854707110
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -130,7 +130,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5991780323319036785}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c48e34ca28187d4bab05f6aa6d2b6b4, type: 3}
+  m_Script: {fileID: 11500000, guid: a8c904baac22cff4f8f10a3a3fe752ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   id: Colors

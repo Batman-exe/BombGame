@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8432638334775908526}
   - component: {fileID: 9154550964450858226}
   - component: {fileID: 3059289948200900535}
-  - component: {fileID: 7431871734007967205}
+  - component: {fileID: 1870869211044518793}
   m_Layer: 0
   m_Name: BombQTE
   m_TagString: Bomb
@@ -121,7 +121,7 @@ CircleCollider2D:
   m_Offset: {x: 0.32618347, y: -1.4174459}
   serializedVersion: 2
   m_Radius: 5.5
---- !u!114 &7431871734007967205
+--- !u!114 &1870869211044518793
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -130,7 +130,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 737263313845374893}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c48e34ca28187d4bab05f6aa6d2b6b4, type: 3}
+  m_Script: {fileID: 11500000, guid: e15b1e27aa7ba4d4ca4f860d4840a895, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   id: QTE

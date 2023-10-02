@@ -37,7 +37,7 @@ public class Timer : MonoBehaviour
             {
                 timeIsUp = true;
                 gameOver.transform.GetChild(0).gameObject.SetActive(true);
-
+                FindObjectOfType<CharacterMovement>().ableToMove = true;
             }
         }
     }
