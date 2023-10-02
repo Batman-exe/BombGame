@@ -15,13 +15,31 @@ public class ColorSequence : MonoBehaviour
     private AudioSource audioSound;
     [SerializeField]private AudioClip good;
     [SerializeField]private AudioClip bad;
+    private int mistakes;
+
+    private BombSpawner bombSpawner;
+
+    [SerializeField] private GameObject timer;
+    [SerializeField] private GameObject gameOver;
+
 
     private void Start()
     {
+        bombSpawner = FindObjectOfType<BombSpawner>();
+        gameOver = GameObject.Find("GameOverCanvas");
+
         audioSound = GetComponent<AudioSource>();
         ResetGame();
         SetButtonIndex();
-        StartCoroutine(PlayGame());
+    }
+
+    private void Update()
+    {
+        if (timer.GetComponent<Timer>().timeIsUp == true)
+        {
+            gameOver.transform.GetChild(0).gameObject.SetActive(true); 
+            Destroy(gameObject, 0.5f);
+        }
     }
 
     //Le asigna un index a cada boton de acuerdo a la posicion en la que se agregaron
@@ -35,17 +53,27 @@ public class ColorSequence : MonoBehaviour
     //Corutina de juego principal, hace un ciclo por el arreglo para mostrar que botones deben ser presionados
     IEnumerator PlayGame()
     {
+        if(colorOrder.Count >= 6)
+        {
+            bombSpawner.GetComponent<BombSpawner>().DeactivateBomb();
+            Destroy(gameObject, 0.5f);
+
+        }
+        else if (mistakes > 1 || timer.GetComponent<Timer>().timeIsUp == true)
+        {
+            Destroy(gameObject, 0.5f);
+            gameOver.transform.GetChild(0).gameObject.SetActive(true);
+
+        }
         pickNumber = 0;
         yield return new WaitForSeconds(pickDelay);
         foreach (int i in colorOrder)
         {
             buttons[i].PressButton();
             yield return new WaitForSeconds(pickDelay);
-
         }
 
         PickRandomColor();
-
 
     }
 
@@ -74,6 +102,7 @@ public class ColorSequence : MonoBehaviour
         } else
         {
             audioSound.PlayOneShot(bad);
+            mistakes++;
             ResetGame();
         }
 
@@ -83,6 +112,7 @@ public class ColorSequence : MonoBehaviour
     private void ResetGame()
     {
         colorOrder.Clear();
+        StartCoroutine(PlayGame());
     }
 
 }

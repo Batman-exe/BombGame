@@ -17,15 +17,28 @@ public class QTEController : MonoBehaviour
     private int randomQTENumber;
     private bool correctKey;
     private bool countingDown;
-
+    //Cuantas rondas de QTE van a suceder
     private int howManyQTEs = 1;
-
-    public int howManyRigth;
+    //Para verificar si gana o pierde
+    private int howManyRigth = 1;
 
     private bool sliderShouldMove = true;
 
+    //Para el counter al principio
     private bool gameStartCounter = true;
     private bool gameStartCounterInProgress = false;
+
+
+    private BombSpawner bombSpawner;
+    [SerializeField] private GameObject timer;
+    [SerializeField] private GameObject gameOver;
+
+    private void Start()
+    {
+        gameOver = GameObject.Find("GameOverCanvas");
+        bombSpawner = FindObjectOfType<BombSpawner>();
+
+    }
 
     private void Awake()
     {
@@ -37,6 +50,14 @@ public class QTEController : MonoBehaviour
 
     private void Update()
     {
+        if(timer.GetComponent<Timer>().timeIsUp == true)
+        {
+            Debug.Log("boom");
+            Destroy(gameObject, 2f);
+            gameOver.transform.GetChild(0).gameObject.SetActive(true);
+
+        }
+
         //Funcion para ejecutar el juego principal
         if (!gameStartCounter)
         {
@@ -52,6 +73,7 @@ public class QTEController : MonoBehaviour
         {
             sliderValue();
         }
+
 
     }
 
@@ -77,6 +99,18 @@ public class QTEController : MonoBehaviour
         //Revisa si ya hay un QTE activo y si ya se alcanzo el maximo de QTEs
         if (!QTEInProgress && howManyQTEs <= 4)
         {
+            if (howManyQTEs == 4 && howManyRigth >= 3)
+            {
+                bombSpawner.GetComponent<BombSpawner>().DeactivateBomb();
+                Destroy(gameObject, 1f);
+            } else if (howManyQTEs == 4 && howManyRigth <3)
+            {
+                Destroy(gameObject, 2f);
+                gameOver.transform.GetChild(0).gameObject.SetActive(true);
+
+
+            }
+
             howManyQTEs++;
             countDownSlider.value = countDownSlider.maxValue;
             sliderShouldMove = true;
@@ -126,7 +160,6 @@ public class QTEController : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.W))
                 {
                     correctKey = true;
-
                     StartCoroutine(KeyPressed());
                 }
                 else
@@ -136,8 +169,6 @@ public class QTEController : MonoBehaviour
 
                     StartCoroutine(KeyPressed());
                 }
-
-
             }
 
         }
@@ -204,7 +235,6 @@ public class QTEController : MonoBehaviour
     IEnumerator KeyPressed()
     {
         randomQTENumber = 5;
-        Debug.Log(correctKey);
         sliderShouldMove = false;
 
         if (correctKey)
@@ -214,12 +244,9 @@ public class QTEController : MonoBehaviour
             howManyRigth++;
 
             yield return new WaitForSeconds(0.5f);
-
             correctKey = false;
             yield return new WaitForSeconds(0.5f);
             QTEInProgress = false;
-
-
 
         } else
         {
@@ -227,7 +254,6 @@ public class QTEController : MonoBehaviour
             ligthtsOnOrOff(false);
 
             yield return new WaitForSeconds(0.5f);
-
             correctKey = false;
             yield return new WaitForSeconds(0.5f);
             QTEInProgress = false;
@@ -257,11 +283,6 @@ public class QTEController : MonoBehaviour
 
     }
 
-    //Actualiza el slider
-    private void sliderValue()
-    {
-        countDownSlider.value -= Time.deltaTime * 1;
-    }
 
     //Busca el GameObject luz y dependiendo de si se quiere la buena o mala se prende la correspondiente
     private void ligthtsOnOrOff(bool answer)
@@ -276,12 +297,14 @@ public class QTEController : MonoBehaviour
             lights[lightsIndex].transform.GetChild(1).gameObject.SetActive(false);
             lights[lightsIndex].transform.GetChild(2).gameObject.SetActive(true);
         }
-        Debug.Log(lightsIndex.ToString());
-
         //Para no referenciar la misma luz se aumenta el index
         lightsIndex += 1;
     }
 
-
+    //Actualiza el slider
+    private void sliderValue()
+    {
+        countDownSlider.value -= Time.deltaTime * 1;
+    }
 
 }
