@@ -9,7 +9,8 @@ TagManager:
   - green
   - yellow
   - Bomb
-  - GameOver
+  - Behind
+
   layers:
   - Default
   - TransparentFX
