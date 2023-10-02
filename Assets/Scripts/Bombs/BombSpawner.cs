@@ -45,7 +45,7 @@ public class BombSpawner : MonoBehaviour
     /// <returns>The id of the random bomb </returns>
     private string BombToSpawn()
     {
-        string[] ids = { "Wire", "QTE", "Colors" };
+        string[] ids = { "QTE", "Colors" };
         int selected = Random.Range(0, ids.Length);
         return ids[selected];
     }

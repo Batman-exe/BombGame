@@ -13,6 +13,5 @@ MonoBehaviour:
   m_Name: BombsConfiguration
   m_EditorClassIdentifier: 
   bombsPrefabs:
-  - {fileID: 6622783424304297280, guid: 76d3b0b0f6a02074c8b23624d94f2de0, type: 3}
   - {fileID: 7431871734007967205, guid: 7e5744b6e51a16045bd77fbba8b5867f, type: 3}
   - {fileID: 8461569237958323274, guid: 1bb9c8e9817b7be4d90659cd63d28f3d, type: 3}

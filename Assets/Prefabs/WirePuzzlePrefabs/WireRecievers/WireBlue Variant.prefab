@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 132527014098970022, guid: b1e6803ac465b564c8156740876f9c7f, type: 3}
+      propertyPath: m_LayerOverridePriority
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 3165081030201956268, guid: b1e6803ac465b564c8156740876f9c7f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.46
@@ -18,7 +22,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3165081030201956268, guid: b1e6803ac465b564c8156740876f9c7f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3165081030201956268, guid: b1e6803ac465b564c8156740876f9c7f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -60,6 +64,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.015686275
       objectReference: {fileID: 0}
+    - target: {fileID: 3343177810594375054, guid: b1e6803ac465b564c8156740876f9c7f, type: 3}
+      propertyPath: m_SortingOrder
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 4418317215554641125, guid: b1e6803ac465b564c8156740876f9c7f, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -72,9 +80,29 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.015686275
       objectReference: {fileID: 0}
+    - target: {fileID: 4418317215554641125, guid: b1e6803ac465b564c8156740876f9c7f, type: 3}
+      propertyPath: m_SortingOrder
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5115252582452823540, guid: b1e6803ac465b564c8156740876f9c7f, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5838053491333929655, guid: b1e6803ac465b564c8156740876f9c7f, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8594746993671687653, guid: b1e6803ac465b564c8156740876f9c7f, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 9069969493011924735, guid: b1e6803ac465b564c8156740876f9c7f, type: 3}
       propertyPath: m_Name
       value: WireBlue Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 9069969493011924735, guid: b1e6803ac465b564c8156740876f9c7f, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 9069969493011924735, guid: b1e6803ac465b564c8156740876f9c7f, type: 3}
       propertyPath: m_TagString

@@ -20,6 +20,7 @@ public class Wire : MonoBehaviour
     {
         line = GetComponent<LineRenderer>();
         sparkSound = GetComponent<AudioSource>();
+        
     }
 
 
@@ -46,8 +47,9 @@ public class Wire : MonoBehaviour
         Vector3 rayOrigin = Camera.main.transform.position;
         Vector3 rayDir = MouseWorldPosition() - Camera.main.transform.position;
         RaycastHit2D hitInfo = Physics2D.Raycast(rayOrigin, rayDir);
-
-        if (Physics2D.Raycast(rayOrigin, rayDir))
+        int layerMask = LayerMask.GetMask("wires");
+        Debug.Log(hitInfo.transform.tag);
+        if (Physics2D.Raycast(rayOrigin, rayDir, 1000f, layerMask))
         {
             //Compara el tag del cable inicial con el que hace contacto
             //Si es igual enciende la luz y desactiva el collider para que no pueda activarse de nuevo

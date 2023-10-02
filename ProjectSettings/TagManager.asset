@@ -10,7 +10,8 @@ TagManager:
   - yellow
   - Bomb
   - Behind
-
+  - GameOver
+  - wireback
   layers:
   - Default
   - TransparentFX
@@ -18,7 +19,7 @@ TagManager:
   - 
   - Water
   - UI
-  - Wires
+  - wires
   - 
   - 
   - 
