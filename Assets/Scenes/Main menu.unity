@@ -162,7 +162,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 475, y: -80.78975}
+  m_AnchoredPosition: {x: 475, y: -27.789757}
   m_SizeDelta: {x: 726.397, y: 49.112}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &595720029
@@ -185,7 +185,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: FONT
+  m_text: ZAPSPLAT
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -723,6 +723,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     - target: {fileID: 2531353040144976738, guid: a27aa7191fbe4f740abe0e67e5595d6d, type: 3}
+      propertyPath: m_text
+      value: SFX
+      objectReference: {fileID: 0}
+    - target: {fileID: 2531353040144976738, guid: a27aa7191fbe4f740abe0e67e5595d6d, type: 3}
       propertyPath: m_fontSize
       value: 44.2
       objectReference: {fileID: 0}
@@ -1072,7 +1076,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4937762561694180653, guid: a27aa7191fbe4f740abe0e67e5595d6d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 4
+      value: 57
       objectReference: {fileID: 0}
     - target: {fileID: 5013621648887327700, guid: a27aa7191fbe4f740abe0e67e5595d6d, type: 3}
       propertyPath: m_fontSize
@@ -1588,7 +1592,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7797950666344420750, guid: a27aa7191fbe4f740abe0e67e5595d6d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -80.78975
+      value: -27.789757
       objectReference: {fileID: 0}
     - target: {fileID: 7831562487013425313, guid: a27aa7191fbe4f740abe0e67e5595d6d, type: 3}
       propertyPath: m_SizeDelta.x

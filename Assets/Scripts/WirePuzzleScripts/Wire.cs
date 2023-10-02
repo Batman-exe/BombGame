@@ -49,7 +49,6 @@ public class Wire : MonoBehaviour
 
         if (Physics2D.Raycast(rayOrigin, rayDir))
         {
-            Debug.Log(hitInfo.transform.tag);
             //Compara el tag del cable inicial con el que hace contacto
             //Si es igual enciende la luz y desactiva el collider para que no pueda activarse de nuevo
             //Si no es igual se regresa a su posicion inicial

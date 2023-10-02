@@ -490,7 +490,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2094566850713691182
 RectTransform:
   m_ObjectHideFlags: 0
@@ -524,6 +524,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeRemaining: 5
   timeText: {fileID: 1665597007355034311}
+  gameOver: {fileID: 0}
   timeIsUp: 0
 --- !u!23 &6464474996028798796
 MeshRenderer:
@@ -922,6 +923,7 @@ MonoBehaviour:
   - {fileID: 8032821200399907758}
   - {fileID: 8491395145182677499}
   timer: {fileID: 6293906966853564725}
+  gameOver: {fileID: 0}
 --- !u!1 &7345286178046428750
 GameObject:
   m_ObjectHideFlags: 0
