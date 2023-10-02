@@ -2,17 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BombWire : MonoBehaviour
+public class BombWire : Bomb
 {
-    // Start is called before the first frame update
-    void Start()
+    protected override void EnablePuzzle()
     {
-        
-    }
+        if (puzzlePrefab != null && playerInTrigger)
+        {
+            Vector3 position = new Vector3(0, 0, 0);
+            GameObject puzzleInstance = Instantiate(puzzlePrefab, position, Quaternion.identity);
+            puzzleInstance.GetComponent<WireWinLose>().SetBomb(this);
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+            playerInTrigger = false;
+        }
     }
 }

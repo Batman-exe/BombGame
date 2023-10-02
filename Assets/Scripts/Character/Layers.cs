@@ -6,17 +6,10 @@ using UnityEngine;
 public class Layers : MonoBehaviour
 {
     private Renderer _renderer;
-    // Start is called before the first frame update
-    void Start()
+
+    private void Start()
     {
         _renderer = GetComponent<Renderer>();
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
 
     }
 

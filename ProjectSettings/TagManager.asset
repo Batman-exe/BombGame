@@ -10,7 +10,11 @@ TagManager:
   - yellow
   - Bomb
   - Behind
-
+  - GameOver
+  - wireback
+  - ColorsPuzzle
+  - WirePuzzle
+  - QTEPuzzle
   layers:
   - Default
   - TransparentFX
@@ -18,7 +22,7 @@ TagManager:
   - 
   - Water
   - UI
-  - Wires
+  - wires
   - 
   - 
   - 

@@ -45,7 +45,7 @@ public class BombSpawner : MonoBehaviour
     /// <returns>The id of the random bomb </returns>
     private string BombToSpawn()
     {
-        string[] ids = { "Wire", "QTE", "Colors" };
+        string[] ids = { "QTE", "Colors" };
         int selected = Random.Range(0, ids.Length);
         return ids[selected];
     }
@@ -56,10 +56,23 @@ public class BombSpawner : MonoBehaviour
     }
 
     /// <summary>
-    /// Decreases the counter of spawned bombs in 1, must be called if a bomb is deactivated
+    /// Sets the position of the defused bomb as free, then waits 5 seconds to respawn a new bomb
     /// </summary>
-    public void DeactivateBomb()
+    /// <param name="position">Defused bomb's position</param>
+    public void DeactivateBomb(Vector3 position)
     {
+        for(int i = 0; i < spawnPositions.Length; i++)
+        {
+            if(position == spawnPositions[i])
+                freePosition[i] = true;
+        }
+
+        StartCoroutine(WaitToRespawn());
+    }
+
+    private IEnumerator WaitToRespawn()
+    {
+        yield return new WaitForSeconds(5f);
         spawnedBombs--;
     }
 }
