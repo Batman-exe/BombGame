@@ -61,6 +61,7 @@ MonoBehaviour:
   good: {fileID: 8300000, guid: 9d05b590df5efa948a550d7763f5905b, type: 3}
   bad: {fileID: 8300000, guid: fec486c3c1e7e0642bf098420d7a9e0f, type: 3}
   timer: {fileID: 4442224553737077995}
+  gameOver: {fileID: 0}
 --- !u!82 &1476723702596766105
 AudioSource:
   m_ObjectHideFlags: 0
@@ -341,8 +342,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdc5938ebc23ebd4e854566669448258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeRemaining: 5
+  timeRemaining: 30
   timeText: {fileID: 4623647432382290215}
+  gameOver: {fileID: 0}
   timeIsUp: 0
 --- !u!1 &5660641180842770646
 GameObject:
