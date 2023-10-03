@@ -32,11 +32,12 @@ public class QTEController : MonoBehaviour
     private BombQTE bomb;
 
     [SerializeField] private GameObject timer;
-    [SerializeField] private GameObject gameOver;
+    [SerializeField] private GameObject endAnimation;
+
 
     private void Start()
     {
-        gameOver = GameObject.Find("GameOverCanvas");
+        endAnimation = GameObject.Find("Animation").transform.GetChild(0).gameObject;
         FindObjectOfType<CharacterMovement>().ableToMove = false;
     }
 
@@ -53,9 +54,8 @@ public class QTEController : MonoBehaviour
         if(timer.GetComponent<Timer>().timeIsUp == true)
         {
             Debug.Log("boom");
+            endAnimation.SetActive(true);
             Destroy(gameObject, 2f);
-            gameOver.transform.GetChild(0).gameObject.SetActive(true);
-
         }
 
         //Funcion para ejecutar el juego principal
@@ -106,10 +106,8 @@ public class QTEController : MonoBehaviour
                 Destroy(gameObject, 1f);
             } else if (howManyQTEs == 4 && howManyRigth <3)
             {
+                endAnimation.SetActive(true);
                 Destroy(gameObject, 2f);
-                gameOver.transform.GetChild(0).gameObject.SetActive(true);
-
-
             }
 
             howManyQTEs++;

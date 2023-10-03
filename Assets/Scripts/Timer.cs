@@ -10,14 +10,9 @@ public class Timer : MonoBehaviour
     [SerializeField]private float timeRemaining = 300;
     private bool timeIsRunning = true;
     [SerializeField]private TextMeshPro timeText;
-    public GameObject gameOver;
+    [SerializeField] private GameObject endAnimation;
 
     public bool timeIsUp = false;
-
-    private void Start()
-    {
-        gameOver = GameObject.Find("GameOverCanvas");
-    }
 
     private void Awake()
     {
@@ -36,8 +31,9 @@ public class Timer : MonoBehaviour
             } else if (Mathf.FloorToInt(timeRemaining) == 1)
             {
                 timeIsUp = true;
-                gameOver.transform.GetChild(0).gameObject.SetActive(true);
                 FindObjectOfType<CharacterMovement>().ableToMove = true;
+                endAnimation.SetActive(true);
+                gameObject.SetActive(false);
             }
         }
     }

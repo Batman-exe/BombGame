@@ -20,25 +20,24 @@ public class ColorSequence : MonoBehaviour
     private BombColors bomb;
 
     [SerializeField] private GameObject timer;
-    [SerializeField] private GameObject gameOver;
-
+    [SerializeField] private GameObject endAnimation;
 
     private void Start()
     {
-        gameOver = GameObject.Find("GameOverCanvas");
-
         audioSound = GetComponent<AudioSource>();
         ResetGame();
         SetButtonIndex();
 
         FindObjectOfType<CharacterMovement>().ableToMove = false;
+
+        endAnimation = GameObject.Find("Animation").transform.GetChild(0).gameObject;
     }
 
     private void Update()
     {
         if (timer.GetComponent<Timer>().timeIsUp == true)
         {
-            gameOver.transform.GetChild(0).gameObject.SetActive(true); 
+            endAnimation.SetActive(true);
             Destroy(gameObject, 0.5f);
         }
     }
@@ -62,9 +61,8 @@ public class ColorSequence : MonoBehaviour
         }
         else if (mistakes > 1 || timer.GetComponent<Timer>().timeIsUp == true)
         {
+            endAnimation.SetActive(true);
             Destroy(gameObject, 0.5f);
-            gameOver.transform.GetChild(0).gameObject.SetActive(true);
-
         }
         pickNumber = 0;
         yield return new WaitForSeconds(pickDelay);
